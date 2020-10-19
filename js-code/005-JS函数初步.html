@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS函数初步</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				JS中的函数等同于Java中的方法
+				
+				Java中的方法
+					【修饰符列表】返回值类型 方法名（形参列表）{
+						方法体
+					}
+				
+				JS中的函数
+					语法：
+						function 函数名（形参列表）{
+							
+						}
+						
+						函数名=function（形参列表）{
+							
+						}
+			*/
+			function sum(a,b){//a,b都是局部变量，形参
+				alert(a+b);
+			}
+			
+			//sum(10,20);
+			
+			//定义函数sayhello
+			function sayHello(username){
+				alert("hello "+username);
+			}
+			//sayHello("zhangsan");
+		</script>
+		
+		<input type="button" value="hello" onclick="sayHello('jack');" />
+	</body>
+</html>

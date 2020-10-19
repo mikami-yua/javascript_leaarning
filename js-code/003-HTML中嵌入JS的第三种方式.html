@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS嵌入的第三种方式-----引入外部独立的JS文件</title>
+	</head>
+	<body>
+		<!--在需要的位置引入js脚本文件-->
+		<script type="text/javascript" src="../js/1.js"></script><!--引入的js文件中的代码依然自上而下的执行-->
+		
+		<!--同一个js文件可以被引入多次，实际开发中这种情况很少-->
+		<script type="text/javascript" src="../js/1.js"></script>
+		
+		<!--不可行 结束的script</script>必须有
+		<script type="text/javascript" src="../js/1.js" />
+		-->
+		<script type="text/javascript" src="../js/1.js"><!--引入文件，在script块中写的内容不再执行-->
+			window.alert("test1");
+		</script>
+		
+		<script type="text/javascript">
+			window.alert("test2")//别的地方引用js文件，只要当前script块没有引用js文件，块中就可以写
+		</script>
+	</body>
+</html>

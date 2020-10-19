@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>HTML中嵌入JS的第一种方式</title><!--标签中直接加标签句柄-->
+	</head>
+	<body>
+		
+		<input type="button" value="html hello" />
+		<!--
+			1.希望点按钮的时候弹出对话框
+			2.JS是事件驱动的编程语言
+				鼠标单击:click
+				任何事件都会对应一个事件句柄：onclick【事件和事件句柄的区别：事件句柄在事件单词前添加on】。事件句柄是以HTML标签的属性存在的
+			3.onclick后面有JS代码， onclick="js代码"，执行原理：
+				页面打开的时候JS代码并不会执行，只是把这段JS代码注册到click事件上了。
+				等这个按钮发生click事件之后，注册在onclick后面的js代码会被浏览器自动调用
+			4.使用js弹框
+				js中有个内置对象window，可以直接拿来使用，window代表的是浏览器对象
+				window对象有个函数叫alert，用法是window.alert("消息")，就可以弹窗了
+			5.js中字符串可以使用双引号，也可以使用单引号
+			6.js中一条语句结束后可以使用分号“；”,也可以不用
+		-->
+		<br />
+		<input type="button" value="js hello" onclick="window.alert('hello js !')" />
+		<input type="button" value="js test" onclick="window.alert('hello zhangsan')
+													window.alert('hello lisi')
+													window.alert('zhaoliu')" />
+		<!--window.可以省略-->
+		<br />
+		<input type="button" value="省略window." onclick="alert('省略window也能显示')" />
+	</body>
+</html>

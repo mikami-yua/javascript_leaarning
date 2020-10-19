@@ -1,0 +1,12 @@
+javaScript
+
+1.什么是JS（小学女生？）
+    JavaScript是运行在浏览器上的脚本语言。简称JS
+    是NetScape开发的最初叫做liveScript，使浏览器更生动，更具有交互性
+    Java运行在jvm中，JavaScript运行在浏览器的内存中
+
+    JavaScript不需要编译，浏览器打开直接执行
+    JavaScript的目标程序以普通文本保存，这种语言都叫做脚本语言
+
+2.HTML中嵌入JavaScript代码
+    三种方式

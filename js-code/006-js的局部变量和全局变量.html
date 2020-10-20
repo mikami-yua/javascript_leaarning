@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>局部变量和全局变量</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				全局变量和局部变量的生命周期不同
+				全局：函数体之外声明的。声明周期：浏览器打开时声明，浏览器关闭时销毁。尽量少用。
+					全局变量会一直在浏览器的内存当中，耗费内存空间。尽量使用局部变量
+				
+				局部变量：在函数体中声明的变量，包括函数的形参
+				生命周期：函数开始时开辟内存空间，函数结束时内存空间释放
+					
+			*/
+		   var i=100;
+		   function access1(){
+			   alert("i= "+i);
+		   }
+		   access1(i);
+		   
+		   var username="jack";
+		   function accessName(){
+			   var username="zhangsan";//局部变量
+			   alert(username);//就近原则
+		   }
+		   accessName();
+		   alert("username= "+username);
+		   
+		   
+		   /*
+			变量声明时没有使用var，无论在哪里声明的都是全局变量
+		   */
+		   function myfunc(){
+			   myname="lisi";
+		   }
+		   myfunc();
+		   alert("myname= "+myname);//myname= lisi
+		</script>
+	</body>
+</html>

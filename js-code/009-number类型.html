@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>number类型</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			number类型包括哪些值：无穷大也属于number类型
+				-1，0，1，2，3.14，100.。。。。。NaN,Infinity
+			
+			NaN 不是数字（Not A Number），但属于数字类型。运算结果本来应该是数字，最后算完不是数字的时候结果是NaN
+			
+			*/
+		   var v1=1;
+		   var v2=3.14;
+		   var v3=-100;
+		   var v4=NaN;
+		   var v5=Infinity;
+		   
+		   alert(typeof v1)
+		   alert(typeof v2)
+		   alert(typeof v3)
+		   alert(typeof v4)
+		   alert(typeof v5)
+		   
+		   //NaN
+		   var a=100;
+		   var b="一百";
+		   alert(a/b);//结果是NaN
+		   
+		   var c="abc";
+		   var d=10;
+		   alert(c+d);//abc10 加号两边有字符串的时候优先做字符串拼接
+		   
+		   //Infinity除数为0，结果就是无穷大
+		   alert(1/0);
+		   
+		   
+		   alert(10/3);//3.3333333333333335
+		   
+		   /*
+		   isNaN函数
+		   isNaN(data) true----->NaN  false----->is a number
+		   */
+			function sum(a,b){
+				if(isNaN(a) || isNaN(b)){
+					alert("参与运算的必须是数字");
+					return;
+				}
+				return a+b;
+			}
+		  
+			sum(100,"abc");
+			alert(sum(100,200));
+			
+			
+			/*
+			parseInt()-----字符串转换为数字，取整数位（向下取整）
+			ParseFloat()
+			Math.ceil()-----向上取整
+ 			*/
+			alert(parseInt("3.99999"));
+			alert(parseInt(3.99999));
+			alert(parseFloat("3.14")+1);
+			alert(Math.ceil(1.1))
+		</script>
+	</body>
+</html>

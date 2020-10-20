@@ -38,5 +38,37 @@
 		</script>
 		
 		<input type="button" value="hello" onclick="sayHello('jack');" />
+		<br />
+		<script type="text/javascript">
+			//Java中函数有重载的机制
+			//JS中的函数可以重载,js中两个函数同名，后一个函数会覆盖前一个函数【谁后声明谁做主】
+			//JS中函数不能重名
+			function sum(a,b){
+				return a+b;
+			}
+			
+			//调用函数sum
+			var retVAlue=sum(1,2);
+			alert(retVAlue);
+			
+			var retVAlue1=sum("abc");
+			alert(retVAlue1);//abcundefined 做了字符串拼接
+			var retVAlue2=sum();
+			alert(retVAlue2);//NaN（NaN表示一个具体存在的值，该值表示不是数字 not a number）
+			var retVAlue3=sum(1,2,3);//3没附上值
+			alert(retVAlue3);//3
+			
+			function test1(username){
+				alert("无参函数");
+			}
+			function test1(){
+				alert("有参函数");
+			}
+			
+			test1("zhangsan");
+			test1();//都是调用的有参函数
+			
+		</script>
+		
 	</body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>null NaN undefined区别</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			区别：数据类型不一致
+			null和undefined可以等同
+			*/
+			
+			alert(typeof null);//object
+			alert(typeof NaN);//number
+			alert(typeof undefined);//undefined
+			
+			alert(null==NaN);//f
+			alert(null==undefined);//T
+			alert(undefined==NaN);//f
+			
+			//js中特殊的运算符==等同运算符（判断值）     ===全等运算符（判断值和数据类型）
+			
+			
+		</script>
+	</body>
+</html>

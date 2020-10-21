@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Object类型</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			1.object是所有类型的超类，自定义的任何类型默认继承object
+			2.object包括的属性
+				prototype【重要】：给类动态的扩展属性和函数
+				constructer
+			3.object包括的函数
+				tiString（）
+				valueOf
+				toLocalString
+			4.在JS中定义类，new对象
+				定义类（和函数的定义相同，使用new，说明不是调用的函数而是对象）
+					1. function 类名（形参）{
+							
+						}
+					2. 类名=function（形参）{
+						
+					}
+				创建类：
+					new 构造方法名（实参）//构造方法名同类名
+			*/
+		   function sayHello(){
+			   
+		   }
+		   
+		   sayHello();//把sayHello当成函数
+		   
+		   var obj=new sayHello();//当成创建对象
+		   
+		   //定义学生类
+		   function Stundent(){
+			   alert("student...");
+		   }
+		   
+		   Stundent();//当作普通函数用
+		   
+		   var stu=new Stundent();//当成类创建对象
+		   alert(stu);//[object Object] toString方法带[]
+		   
+		   
+		   //JS中类的定义和构造函数的定义,JS中类的定义和构造函数的定义是在一起完成的
+		   function User(a,b,c){
+			  //声明属性
+			   this.sno=a;
+			   this.sname=b;
+			   this.sage=c;
+			   //定义函数
+			   this.getAge=function(){
+				   return this.sage;
+			   }
+			   
+		   }
+		   
+		   //创建对象
+		   var u1=new User(111,"zhangsan",30);
+		   //访问对象的属性
+		   alert(u1.sno);
+		   alert(u1.sname);
+		   alert(u1.sage);
+		   //访问对象的属性
+		   alert(u1["sno"]);
+		   alert(u1["sname"]);
+		   alert(u1["sage"]);
+		   //使用函数
+		   var age=u1.getAge();
+		   alert("function "+age);
+		   
+		   //通过prototype给类动态扩展属性和函数
+		   User.prototype.getName=function(){
+			   return this.sname;
+		   }
+		   var name=u1.getName();
+		   alert("prototype "+name);
+		   
+		   //给String扩展函数
+		   String.prototype.suiyi=function(){
+			   alert("这个是给String类型扩展的函数：suiyi");
+		   }
+		   "abc".suiyi();//可以使用
+		   
+		   
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>键盘事件</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.onload=function(){
+				var username=document.getElementById("username");
+				username.onkeydown=function(event){//这个局部变量名字随意，这个随机变量将来会接受到一个东西.测试后回调函数只有一个参数
+					//获取键值  回车13  esc27
+					//alert(event);//[object KeyboardEvent]
+					//对于键盘事件对象来说，都有keycode属性，获得键值
+					//alert(event.keyCode);
+					
+					if(event.keyCode==13){
+						alert("正在进行验证");
+					}
+				}
+			}
+		</script>
+		<input type="text" id="username" />
+	</body>
+</html>

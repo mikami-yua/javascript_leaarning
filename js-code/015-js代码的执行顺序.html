@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>代码的执行顺序</title>
+	</head>
+	<body onload="ready()">
+		
+		<script type="text/javascript">
+			/*
+			这里的btn=null	代码执行到此处，id=btn的元素还没有加载到内存
+			1.脚本放后面
+			2.load事件在整个页面加载完毕后再发生
+			*/
+			// document.getElementById("btn").onclick=function(){
+			// 	alert("hello js");
+			// }
+			
+			function ready(){
+				document.getElementById("btn").onclick=function(){
+					alert("hello js");
+				}
+			}
+		</script>
+		
+		<input type="button" value="hello" id="btn" />
+	</body>
+</html>

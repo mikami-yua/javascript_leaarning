@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>控制语句</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				1.if
+				2.switch
+				3.while
+				4.do...while
+				5.for
+				6.break
+				7.continue
+				
+				
+				js特有的
+				for in
+				with
+			*/
+			//创建数组
+			var arr=[false,true,1,3.14,"abc",2];//元素类型随意，js数组自动扩容
+			for(var i=0;i<arr.length;i++){
+				alert(arr[i]);
+			}
+			
+			for(var i in arr){//i是数组元素的下标
+				alert(arr[i]);
+			}
+			
+			User=function(username,password){
+				this.username=username;
+				this.password=password;
+			}
+			
+			var u=new User("zhangsan","111");
+			alert(u["username"]+","+u["password"]);
+			
+			for(var ShuXingMing in u ){
+				alert(ShuXingMing+"  "+typeof ShuXingMing);
+				alert(u[ShuXingMing]);//本身是字符串，不用加引号了
+			}
+			
+			with(u){
+				alert(username);
+				alert(password);
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>获取文本框的value</title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			/*
+			window.onload=function(){
+				var btnelt=document.getElementById("btn");
+				alert(btnelt)
+			}
+			*/
+		   window.onload=function(){
+			   var btnelt=document.getElementById("btn");//1.拿到but元素
+			   btnelt.onclick=function(){//2.对btn元素绑定点击事件
+				   //3.获取username节点
+				   var usernameele=document.getElementById("username");
+				   var name=usernameele.value;
+				   alert(name);
+				   //4.可以修改value
+				   name=name+"111";
+				   alert(name)
+			   }
+		   }
+		</script>
+		
+		<!--<input type="button" id="btn" value="hello" />-->
+		
+		<input type="text" id="username" />
+		<input type="button" id="btn" value="获取" />
+		<br />
+		<hr /><br />
+		实现在一个文本框中写，可以点一下直接复制到另一个文本框
+		<script type="text/javascript">
+			window.onload=function(){//页面加载完毕后执行
+				document.getElementById("chik").onclick=function(){
+					//获取第一个框的值
+					document.getElementById("target").value=document.getElementById("source").value;
+				}
+			}
+		</script>
+		
+		
+		<input type="text" id="source" />
+		<input type="text" id="target" />
+		<input type="button" id="chik" value="点击复制" />
+		
+	</body>
+</html>

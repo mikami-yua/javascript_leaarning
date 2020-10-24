@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>消息框和确认框</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function def(){
+				var flag=window.confirm("是否删除数据");//返回true和false，点击确认是true
+			}
+		</script>
+		
+		<input type="button" value="弹出消息框" onclick="window.alert('消息框')" />
+		<input type="button" value="确认框" onclick="def()" />
+	</body>
+</html>

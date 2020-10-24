@@ -70,15 +70,93 @@
 				   //清空span
 				   userspan.innerText="";
 			   }
+			   
+			   
+			   /*
+			   对密码进行验证
+			   */
+			  var userpasswd2ele=document.getElementById("passwd2");
+			  var pwdError=document.getElementById("passwdError");
+			  //绑定blur事件
+			  userpasswd2ele.onblur=function(){
+				  //获取密码和确认密码
+				  var uerpwdele=document.getElementById("passwd");
+				  var pwd=uerpwdele.value;
+				  var pwd2=userpasswd2ele.value;
+				  if(pwd != pwd2){
+					  pwdError.innerText="密码不一致";
+				  }else{
+					  
+				  }
+			  }
+			  
+			  userpasswd2ele.onfocus=function(){
+				  if(pwdError.innerText != ""){
+					  userpasswd2ele.value="";
+				  }
+				  pwdError.innerText="";
+			  }
+			  
+			  /*
+			  对邮箱验证
+			  */
+			  var emailele=document.getElementById("email");
+			  var emailError=document.getElementById("emailError");
+			  emailele.onblur=function(){
+				  var email=emailele.value;
+				  var emailRegExp=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+				  var flag=emailRegExp.test(email);
+				  if(flag){//true合法
+					   	   
+				  }else{
+					  emailError.innerText="邮箱地址不合法";
+				  }
+			  }
+			  
+			  emailele.onfocus=function(){
+				  if(emailError.innerText != ""){
+					  emailele.value="";
+				  }
+				  emailError.innerText="";
+			  }
+			  
+			  
+			  /*
+			  提交事件的除理
+			  */
+			 var submit=document.getElementById("submitbtn");
+			 submit.onclick=function(){
+				 //触发username的blur事件，passwd2的blur，email的blur
+				 usernameElt.focus();
+				 usernameElt.blur();
+				 userpasswd2ele.focus();
+				 userpasswd2ele.blur(); 
+				 emailele.focus();
+				 emailele.blur();
+				 
+				 if(userspan.innerText=="" && pwdError.innerText=="" && emailError.innerText==""){//所有表单项都是合法的提交表单
+					 //提交表单
+					 var userform=document.getElementById("userform");
+					 //userform.action=""也可以在这里定位action
+					 userform.submit();
+				 }else{
+					 
+				 }
+			 }
+			/*
+			http://loaclhost:8848/jd/save?username=asdfasd&passwd=123&email=123451216%40123.com
+			123451216@123.com
+			*/
+			  
 		   }
 		   
 		</script>
-		<form action="http://loaclhost:8080/jd/save" method="get"><!--表单提交应该使用post，这里为了看使用get-->
+		<form id="userform" action="http://loaclhost:8080/jd/save" method="get"><!--表单提交应该使用post，这里为了看使用get-->
 			用户名<input type="text" name="username" id="username" /><span id="usernameError"></span><br />
 			密码<input type="text" name="passwd" id="passwd" /><br />
 			确认密码<input type="text" id="passwd2" /><span id="passwdError"></span><br />
 			邮箱<input type="text" name="email" id="email" /><span id="emailError"></span><br />
-			<input type="submit" value="注册" /><br />
+			<input type="button" value="注册" id="submitbtn"/><br /><!--不使用submit，因为需要进行验证-->
 			<input type="reset" value="重置" /><br />
 		</form>
 	</body>

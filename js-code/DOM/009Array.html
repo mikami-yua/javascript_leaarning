@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>array</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//创建长度为0的数组
+			var arr=[];
+			
+			var arr2=[1,2,3,"abc",3.14];//数据类型随意
+			arr2[8]="test";//没有数组下标越界,自动扩容
+			for(var i=0;i<arr2.length;i++){
+				document.writeln(arr2[i]);//1 2 3 abc 3.14 undefined undefined undefined test
+			}
+			
+			//另一种创建数组对象的方式
+			var arr3=new Array();//默认长度是0
+			var arr4=new Array(3);//默认长度是3
+			var arr5=new Array(1,2,3,4,5)//超过1个数字认为是数组中的元素
+			
+			
+			//相关的方法
+			var str=arr2.join("-");//把数组中的元素用- 连接成字符串
+			document.write("<br />")
+			document.write(str);//1-2-3-abc-3.14----test
+			
+			arr2.push(10);//在数组末尾添加
+			document.write("<br />")
+			document.write(arr2.join("-"));//1-2-3-abc-3.14----test-10
+			
+			var end=arr2.pop();//将数组末尾的元素弹出，数组长度-1
+			document.write("<br />")
+			document.write(arr2.join("-"));//1-2-3-abc-3.14----test
+			document.write("<br />")
+			document.write(end);//10
+			
+			//js的数组可以自动模拟栈
+			
+		</script>
+	</body>
+</html>

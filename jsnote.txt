@@ -90,5 +90,38 @@ javaScript
 			
 		6.可以快速从网上找到需要的正则表达式
 		
-p47
+6.浏览器项服务器发请求
+	超链接
+	表单form的提交
+	document.loaction
+	window.location
+	window.open("url")
+	直接在浏览器地址栏输入url
+	
+	以上所有请求方式都可以携带数据给服务器，只有表单的提交发送的数据是动态的
+
+7.json
+	1.什么是json
+		JavaScript object Notation（js对象标记，是一种数据交换数据）
+		
+		json最主要的作用就是交换数据（A系统与B系统交换数据使用json）
+	
+	2.是一种标准的轻量级数据交换格式
+		体积小，易解析
+		
+	3.实际开发中两种数据交换格式：json/xml
+		xml体积大，解析麻烦，优点是语法严谨。
+	
+	4.json语法格式
+		var jsonObj={
+			"sno":"110",
+			"sex":"男",
+			"sname":"张三"
+			"属性名":"属性值",
+			.........
+		};
+		
+	5.json在js中以js对象的形式存在
+	
+		
 	

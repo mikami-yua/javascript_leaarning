@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>设置table的tbody</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//有这些json数据
+			var data={
+				"total":3,
+				"emps":[
+					{"empno":1111,"ename":"smith","sal":800.0},
+					{"empno":1112,"ename":"kirito","sal":1800.0},
+					{"empno":1113,"ename":"akua","sal":1200.0}
+				]
+			}
+			
+			//把数据展示到table
+			window.onload=function(){
+				var display=document.getElementById("display");
+				display.onclick=function(){
+					var emps=data.emps;
+					var html="";
+					for(var i=0;i<emps.length;i++){
+						var emp=emps[i];
+						html+="<tr>";
+						html+="<td>"+emp.empno+"</td>";
+						html+="<td>"+emp.ename+"</td>";
+						html+="<td>"+emp.sal+"</td>";
+						html+="</tr>";
+					}
+					document.getElementById("emptbody").innerHTML=html;
+					document.getElementById("count").innerText=data.total;
+				}
+			}
+		</script>
+		<input type="button" value="显示员工信息" id="display" />
+		<h2>员工信息表</h2>
+		<hr />
+		<table border="1px" width="50%">
+			<tr>
+				<th>员工编号</th>
+				<th>员工姓名</th>
+				<th>员工薪资</th>
+			</tr>
+			<tbody id="emptbody">
+				<!--
+				<tr>
+					<td>1111</td>
+					<td>smith</td>
+					<td>800.0</td>
+				</tr>
+				<tr>
+					<td>1112</td>
+					<td>kirito</td>
+					<td>1800.0</td>
+				</tr>
+				<tr>
+					<td>1113</td>
+					<td>akua</td>
+					<td>1200.0</td>
+				</tr>
+				-->
+			</tbody>
+		</table>
+		总共<span id="count">0</span>条数据
+	</body>
+</html>
